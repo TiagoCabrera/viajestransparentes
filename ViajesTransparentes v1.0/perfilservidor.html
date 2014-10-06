@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+        <link href="./archivos/style/StyleSheet.css" rel="stylesheet" type="text/css">
+        <script src="./archivos/script/Script.js"></script>
+        <script src="./archivos/script/scriptData.js"></script>
+        <meta charset="utf-8" />        
+        <title></title>
+        <style>
+
+            #divLeftComision {
+                width: 100%; height: 49px; float: left; border-radius: 10px 10px 0px 0px; background-color: #333;  
+                
+            }
+
+            #idLogoComision {
+                margin: 10px; float: left;
+            }
+
+            #ContentSearchComision {
+                width: 960px; height: 350px; margin-top: 10px; font-family: sans-serif; color: #000; font-size: 12px; background-color: #f00;
+            }
+            
+            #ComisionLeftDetail{
+                float: left; width: 300px; height: 100%; margin: 10px; text-align: left;box-shadow: 0px 0px 5px 0px #333;
+                background-color: #0094ff;
+            }
+            
+            #fotoComisionada{
+                
+            }
+            .dataPerfil {
+                margin: 10px 0px; padding-left: 10px
+            }
+            #titleConsecutivo {
+                margin: 0; text-align: center; background-color: #0094ff; padding:10px; color: #fff; font-size: 14px;
+            }
+
+            #Compartir {
+                margin: 10px; padding-left: 10px;padding-top: 20px; text-align: center;
+            }
+            #ComisionRightDetail {
+                float: left; width: 610px; height: 95%;  margin: 10px; background-color: #808080;
+            }
+            #titleComision{
+                float: left; margin: 20px 0px 0px 10px; cursor: pointer;
+            }
+            #imgViajes {
+                margin: 10px; float: left;
+            }
+        </style>
+    </head>
+    <body onload="loadperfilservidor()">
+        <div id="page">
+            <!-- Head -->
+            <div id="head">
+                <div id="headTitle">
+                    <div id="salto"></div>
+                    <a>SUSCRIBASE |</a>
+                    <a>SIGANOS EN [</a>
+                    <a>FACEBOOK |</a>
+                    <a>TWITTER |</a>
+                    <a>GOOGLE+]</a>
+                </div>    
+            </div>
+            <!-- Busqueda -->
+            <div id="divSearch">
+                <div id="divSarchContent">
+                    <!--
+                    <div style="float: left; width: auto; height: 40px; font-size: 18px; color: #1e5799; padding: 10px;">
+                        <a style="text-decoration: underline; padding: 5px">Inicio </a>|<a style="text-decoration: underline; padding: 5px;"> Nuestra División</a>
+                    </div>
+                    -->
+                    <div id="divInputSearch">
+                        <div id="salto"></div>
+                        <img id="lupa" alt="Busqueda" src="./archivos/icon/lupa.png" width="35">
+                        <input id="inputBusqueda" placeholder="Buscar un Funcionario Publico u Comisión"> 
+                        <div id="clearBoth"></div>
+                    </div>
+                </div>    
+            </div>
+            <!-- Foot -->
+            <div id="masterFoot">
+                <div id="lineLeft"></div>
+                <div id="masterContentePage" style="">
+
+                    <div id="PageLeft">
+                        <img id="masterLogo" onclick="Enlace('index.html')" alt="Logotipo Principal" src="./archivos/icon/final.png" width="400" height="100">
+                    </div>
+
+                    <div id="pageRight">
+                        <div id="salto"></div>
+                        <center>
+                            <div id="contentLogoMaster" onclick="Enlace('nuestradivision.html')">
+                                <img id="imgDivision" alt="Division" src="./archivos/icon/sede.png" width="50" height="50">
+                                <a>NUESTRA DIVISIÓN</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('servidorespublicos.html')"  style="margin-top: -10px; border-bottom:5px solid #1e5799;">
+                                <img id="imgFuncionarios" alt="Funcionarios" src="./archivos/icon/funcionarios.png" width="40" height="40">
+                                <a>FUNCIONARIOS PUBLICOS</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('listacomision.html')">
+                                <img id="imgComisiones" alt="Comisiones" src="./archivos/icon/viajes.png" width="40" height="35">
+                                <a>COMISIONES</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('estadisticas.html')">
+                                <img id="imgEstadisticas" alt="Estadisticas" src="./archivos/icon/estadisticas.png" width="40" height="40">
+                                <a>ESTADISTICAS</a>
+                            </div>
+                        </center>
+                    </div>
+                    <div id="clearBoth"></div>
+                </div> 
+                <div id="lineRight"></div>
+            </div>
+
+            <div id="contentDataMaster" style="box-shadow: 0px 0px 5px 0px #333; border-radius: 10px 10px 10px 10px;">
+                <div style="width: 100%; height: 50px; background-color: #1e5799; border-radius: 10px 10px 0px 0px;">
+                    <center>
+                        <img id="imgViajes" alt="Logo Funcionario" src="./archivos/icon/contacto.png" width="30" height="30">
+                        <a id="titleComision" onclick="Enlace('servidorespublicos.html')" style="color: #fff;">Perfil del Funcionario Publico</a>
+                        <div id="clearBoth"></div>
+                    </center>
+                </div>
+                <div style="width: 300px; height: 87%; float: left;">
+                    <center>
+                        <img id="fotoComisionada" alt="Foto de Perfil" src="./archivos/Fotos/perfil.png" width="250" style="margin-top: 4px;">
+                    </center>
+                    <div style="margin-top: 0px; height: 120px;">
+                        
+                        <p style="background-color: #ebebeb; margin: 0px; padding: 10px; text-align: center;"> DATOS PUBLICOS </p>
+                        
+                        <p style="font-size: 12px; text-transform: uppercase;" class="dataPerfil" id="nombre">NOMBRE: CARGANDO...</p>
+                        <p style="font-size: 12px; text-transform: uppercase;" class="dataPerfil" id="cargo">CARGO: CARGANDO...</p>
+                        <p style="font-size: 12px; text-transform: uppercase;" class="dataPerfil" id="ncomision">PERSONAL DE: CARGANDO...</p>
+                        <p style="font-size: 12px; text-transform: uppercase;" class="dataPerfil" id="grupo">GRUPO: CARGANDO...</p>
+                    </div>
+                    <div style="margin-top: 30px; margin-left: 10px;">
+
+                        <a href="https://twitter.com/share" class="twitter-share-button" style="margin-left: 10px; margin-right: 10px;">Tweet</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        <div id="fb-root" style="float: left; padding: 0px 10px 0px 10px;"></div>
+                        <script>(function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.0";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+
+                        <div class="fb-like" data-href="" data-layout="button" data-action="like" data-show-faces="true" data-share="true" style="float: left;"></div>
+
+
+
+                    </div>
+                </div>
+                <script>
+
+                    function displayComision() {
+                        document.getElementById("comisiones").style.display = "inline-block";
+                        document.getElementById("perfil").style.display = "none";
+                    }
+                    function displayPerfil() {
+                        document.getElementById("comisiones").style.display = "none";
+                        document.getElementById("perfil").style.display = "inline-block";    
+                    }
+
+
+                </script>
+                <div style="width: 658px; height: 87%; float: left; font-size: 13px; border-left: 2px solid #ebebeb;">
+                    <div style="width: 100%;">
+                        <div onclick="displayComision()" style="float: left; width: 50%; background-color: #cccccc;text-align: center; cursor: pointer;">
+                            <p>COMISIONES REGISTRADAS</p>
+                        </div>
+                        <div onclick="displayPerfil()" style="float: left; width: 50%; text-align: center; background-color: #ebebeb; cursor: pointer;">
+                            <p>MAS DETALLES</p>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div style="height: 85%; overflow-y: auto;">
+                    
+                        <center>
+                            <table id="comisiones" style="margin-top: 20px;">
+                                <thead>
+                                    <tr>
+                                        <td style="width: 50px; background-color: #0094ff; color: #fff; padding: 10px;">No </td>
+                                        <td style="width: 50px; background-color: #0094ff; color: #fff; padding: 10px;">FECHA</td>
+                                        <td style="width: 70px; background-color: #0094ff; color: #fff; padding: 10px;">VIAJE</td>
+                                        <td style="width: 120px; background-color: #0094ff; color: #fff;padding: 10px">ORIGEN</td>
+                                        <td style="width: 100px; background-color: #0094ff; color: #fff; padding: 10px;">DESTINO</td>
+                                        <td style="width: 80px; background-color: #0094ff; color: #fff;padding: 10px;">GASTOS</td>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </center>
+                        <center>
+                            <table id="perfil" style="margin: 20px; display: none;">
+                                <thead>
+                                    <tr>
+                                        <td colspan="2" style="width: 100px; background-color: #0094ff; color: #fff; text-align: center; padding: 10px;">MAS DETALLES</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>INSTITUCÍON:</td>
+                                        <td id="institución" style="text-transform: uppercase;">CARGANDO...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NOMBRE COMPLETO:</td>
+                                        <td id="nombreC" style="text-transform: uppercase;">CARGANDO...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NOMBRE DEL CARGO:</td>
+                                        <td id="nombreCargo" style="text-transform: uppercase;">CARGANDO...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NOMBRE DEL CARGO SUPERIOR:</td>
+                                        <td id="nombreCargoS" style="text-transform: uppercase;">CARGANDO...</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 200px;">UNIDAD ADMINISTRATIVA:</td>
+                                        <td id="UA" style="text-transform: uppercase;">CARGANDO...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CLAVE DE REMUNERACIÓN SALARIAL:</td>
+                                        <td id="claveR" style="text-transform: uppercase;">CARGANDO...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NOMBRE DEL PUESTO:</td>
+                                        <td id="nombrePuesto" style="text-transform: uppercase;">CARGANDO...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CORREO ELECTRONICO:</td>
+                                        <td id="correo" style="text-transform: uppercase;">CARGANDO...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </center>
+                                
+                    </div> 
+                
+                </div>
+                <div style="clear: both;"></div>
+                <!--
+                    <div id="divLeftComision">
+                        <center>
+                            <img id="idLogoComision" alt="Logo Comision" src="./archivos/icon/comision.png" width="35" height="25">
+                            <a id="titleComision" onclick="Enlace('viajestransparente.html')"> Liste de Comisiones</a>
+                            <div id="clearBoth"></div>
+                        </center>
+                        <div id="ContentSearchComision">
+                            <div id="ComisionLeftDetail">
+                                <img id="fotoComisionada" alt="Foto de Perfil" src="./archivos/Fotos/MariaElenaPerez.jpg" width="300" height="210">
+                                <div style="margin-top: -3px; height: 160px;">
+                                    <p id="titleConsecutivo"> PERFIL DEL SERVIDOR PUBLICO</p>
+                                    <p class="dataPerfil" id="nombre">NOMBRE: CARGANDO...</p>
+                                    <p class="dataPerfil" id="cargo">CARGO: CARGANDO...</p>
+                                    <p class="dataPerfil" id="ncomision">CONSECUTIVO: CARGANDO...</p>
+                                    <p class="dataPerfil" id="grupo">GRUPO: CARGANDO...</p>
+                                </div>
+                                <div style="height: 50px;">
+                                    <p id="Compartir">SEGUIR | COMPARTIR </p>
+                                </div>
+                            </div>
+                            <div id="ComisionRightDetail">
+
+
+                                <div style="height: 340px; overflow-y: auto;">                                
+                                    <center>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td style="width: 100px; background-color: #0094ff; color: #fff;">No COMISION</td>
+                                                    <td style="width: 70px; background-color: #0094ff; color: #fff;">FECHA</td>
+                                                    <td style="width: 70px; background-color: #0094ff; color: #fff;">VIAJE</td>
+                                                    <td style="width: 120px; background-color: #0094ff; color: #fff;">ORIGEN</td>
+                                                    <td style="width: 100px; background-color: #0094ff; color: #fff;">DESTINO</td>
+                                                    <td style="width: 100px; background-color: #0094ff; color: #fff;">GASTOS</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2013.I.0013</td>
+                                                    <td>21-12-1990</td>
+                                                    <td>INTERNACIONAL</td>
+                                                    <td>CIUDAD DE MEXICO</td>
+                                                    <td>ESTADOS UNIDOS</td>
+                                                    <td>$123123 USD</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </center>
+                                </div>
+                                <div style="clear: both"></div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                
+                -->
+            </div>
+        </div>
+        <script>
+            /*
+            document.getElementById("contentDataMaster").style.height = (screen.height - 370) + "px";
+            */
+        </script>
+    </body>
+</html>

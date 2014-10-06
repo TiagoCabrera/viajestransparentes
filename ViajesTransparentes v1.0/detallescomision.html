@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+        <link href="./archivos/style/StyleSheet.css" rel="stylesheet" type="text/css">
+        <script src="./archivos/script/Script.js"></script>
+        <script src="./archivos/script/scriptData.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer> {lang: 'es'} </script>
+        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+        
+
+        <meta charset="utf-8" />
+        <title>DETALLES DE COMISIÓN</title>
+        <style>
+            
+/* Estilos de Comisoin  Detalles*/
+#idComisionDetail{
+    margin: 0px; height: 500px; background-color: #fff; width: auto; border-radius: 10px 10px 10px 10px;
+}
+#divLeftComision {
+    width: 100%; height: 49px; float: left; border-radius: 10px 10px 0px 0px; background-color: #333;                
+}
+
+#idLogoComision {
+    margin: 10px; float: left;
+}
+
+#ContentSearchComision {
+    width: 960px; height: 440px; margin-top: 10px; font-family: sans-serif; color: #000; font-size: 12px;
+}
+            
+#ComisionLeftDetail{
+    float: left; width: 300px; height: 420px; margin: 10px; text-align: left;box-shadow: 0px 0px 5px 0px #333;
+}
+            
+#fotoComisionada{
+                
+}
+.dataPerfil {
+    margin: 10px 0px; padding-left: 10px
+}
+#titleConsecutivo {
+    margin: 0; text-align: center; background-color: #0094ff; padding:10px; color: #fff; font-size: 14px;
+}
+
+#Compartir {
+    margin: 0px; padding-left: 10px;padding-top: 20px; text-align: center;
+}
+#ComisionRightDetail {
+    float: left; width: 610px; height: 420px;  margin: 10px;
+}
+#containerIcon{
+    height: 80px; background-color: #0094ff; cursor: pointer;
+}
+
+.divCuadro {
+    width: 87px; height: 60px; float: left; color: #fff; border-radius: 10px 10px 10px 10px;
+}
+
+#comision {
+    font-size: 12px; margin: 10px 0px 12px 0px; width: 450px; border: 2px solid #0094ff; display: block;
+}
+#titleTable {
+    font-size: 13px; color: #fff; text-align: center; font-weight: bold; padding: 5px; border-bottom: 1px solid #e4e1e1; background-color: #0094ff; width: 450px;
+}
+#titleComisionTable {
+    color: #333; text-align: right; width: 180px; padding: 5px 0px 5px 0px;
+}
+.dataTableComision {
+    color: #808080; padding: 5px 0px 5px 0px; text-transform: uppercase; text-align: left;
+}
+#viaje {
+    font-size: 12px; margin: 10px 0px 12px 0px; width: 450px; border: 2px solid #0094ff; display: none;
+}
+#titleViajeTable {
+    color: #333; text-align: right; width: 180px; padding: 5px 0px 5px 0px;
+}
+#patrocinador {
+    font-size: 12px; margin: 10px 0px 12px 0px; width: 450px; border: 2px solid #0094ff; display: none;
+}
+#titlePatrocinadorTable {
+    color: #333; text-align: right; width: 240px; padding: 5px 0px 5px 0px;
+}
+#titlePat {
+    font-size: 13px; color: #fff; text-align: center; font-weight: bold; padding: 5px; border-bottom: 1px solid #e4e1e1; background-color: #0094ff; width: 450px;                
+}
+#gastos {
+    font-size: 12px; margin: 10px 0px 12px 0px; width: 450px; border: 2px solid #0094ff; display: none;                
+}
+#titleGastos {
+    font-size: 13px; color: #fff; text-align: center; font-weight: bold; padding: 5px; border-bottom: 1px solid #e4e1e1; background-color: #0094ff; width: 450px;
+}
+#gastosTitleTable {
+    color: #333; text-align: right; width: 250px; padding: 5px 0px 5px 0px;
+}
+#actividades {
+    font-size: 12px; margin: 10px 0px 12px 0px; width: 450px; border: 2px solid #0094ff; display: none;
+}
+
+#actividadesTitle {
+    font-size: 13px; color: #fff; text-align: center; font-weight: bold; padding: 5px; border-bottom: 1px solid #e4e1e1; background-color: #0094ff; width: 450px;
+}
+#actividadesTitleTable {
+    color: #333; text-align: right; width: 160px; padding: 5px 0px 5px 0px;
+}
+            
+            #masteContainer {
+    width: 960px; height: 500px; position: absolute; left: 50%; top: 50%; margin-left: -480px; margin-top: -315px; color: #fff; border-radius: 10px 10px 10px 10px; opacity: 0.95;                
+}
+            
+            #titleComision{
+                float: left; margin: 20px 0px 0px 10px; cursor: pointer;
+            }
+            #imgViajes {
+                margin: 10px; float: left;
+            }
+            
+        </style>
+    </head>
+    <body  onload="loadComisionDetail()">
+        <div id="page">
+            <!-- Head -->
+            <div id="head">
+                <div id="headTitle">
+                    <div id="salto"></div>
+                    <a>SUSCRIBASE |</a>
+                    <a>SIGANOS EN [</a>
+                    <a>FACEBOOK |</a>
+                    <a>TWITTER |</a>
+                    <a>GOOGLE+]</a>
+                </div>    
+            </div>
+            <!-- Busqueda -->
+            <div id="divSearch">
+                <div id="divSarchContent">
+                    <!--
+                    <div style="float: left; width: auto; height: 40px; font-size: 18px; color: #1e5799; padding: 10px;">
+                        <a style="text-decoration: underline; padding: 5px">Inicio </a>|<a style="text-decoration: underline; padding: 5px;"> Nuestra División</a>
+                    </div>
+                    -->
+                    <div id="divInputSearch">
+                        <div id="salto"></div>
+                        <img id="lupa" alt="Busqueda" src="./archivos/icon/lupa.png" width="35">
+                        <input id="inputBusqueda" placeholder="Buscar un Funcionario Publico u Comisión"> 
+                        <div id="clearBoth"></div>
+                    </div>
+                </div>    
+            </div>
+            <!-- Foot -->
+            <div id="masterFoot">
+                <div id="lineLeft"></div>
+                <div id="masterContentePage" style="">
+
+                    <div id="PageLeft">
+                        <img id="masterLogo" onclick="Enlace('index.html')" alt="Logotipo Principal" src="./archivos/icon/final.png" width="400" height="100">
+                    </div>
+
+                    <div id="pageRight">
+                        <div id="salto"></div>
+                        <center>
+                            <div id="contentLogoMaster" onclick="Enlace('nuestradivision.html')">
+                                <img id="imgDivision" alt="Division" src="./archivos/icon/sede.png" width="50" height="50">
+                                <a>NUESTRA DIVISIÓN</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('servidorespublicos.html')">
+                                <img id="imgFuncionarios" alt="Funcionarios" src="./archivos/icon/funcionarios.png" width="40" height="40">
+                                <a>FUNCIONARIOS PUBLICOS</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('listacomision.html')" style="margin-top: -10px; border-bottom:5px solid #1e5799;">
+                                <img id="imgComisiones" alt="Comisiones" src="./archivos/icon/viajes.png" width="40" height="35">
+                                <a>COMISIONES</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('estadisticas.html')">
+                                <img id="imgEstadisticas" alt="Estadisticas" src="./archivos/icon/estadisticas.png" width="40" height="40">
+                                <a>ESTADISTICAS</a>
+                            </div>
+                        </center>
+                    </div>
+                    <div id="clearBoth"></div>
+                </div> 
+                <div id="lineRight"></div>
+            </div>
+
+            <div id="contentDataMaster" style="box-shadow: 0px 0px 5px 0px #333; border-radius: 10px 10px 10px 10px;">
+                <div style="width: 100%; height: 50px; background-color: #1e5799; border-radius: 10px 10px 0px 0px;">
+                    <center>
+                        <img id="imgViajes" alt="Logo Funcionario" src="./archivos/icon/contacto.png" width="30" height="30" style="">
+                        <a id="titleComision" onclick="Enlace('servidorespublicos.html')" style="color: #fff;">Detalles de Comisión</a>
+                        <div style="clear: both"></div>
+                    </center>
+                </div>
+                <div style="width: 300px; height: 87%; float: left;">
+                    <center>
+                        <img id="fotoComisionada" alt="Foto de Perfil" src="./archivos/Fotos/perfil.png" width="250" style="margin-top: 4px;">
+                    </center>
+                    <div style="margin-top: 0px; height: 120px;">
+                        
+                        <p style="background-color: #ebebeb; margin: 0px; padding: 10px; text-align: center;"> DATOS PUBLICOS </p>
+                        
+                        <p style="font-size: 12px; text-transform: uppercase;" class="dataPerfil" id="nombre">NOMBRE: CARGANDO...</p>
+                        <p style="font-size: 12px; text-transform: uppercase;" class="dataPerfil" id="cargo">CARGO: CARGANDO...</p>
+                        <p style="font-size: 12px; text-transform: uppercase;" class="dataPerfil" id="ncomision">PERSONAL DE: CARGANDO...</p>
+                        <p style="font-size: 12px; text-transform: uppercase;" class="dataPerfil" id="grupo">GRUPO: CARGANDO...</p>
+                    </div>
+                    <div style="margin-top: 30px; margin-left: 10px;">
+
+                        <a href="https://twitter.com/share" class="twitter-share-button" style="margin-left: 10px; margin-right: 10px;">Tweet</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        <div id="fb-root" style="float: left; padding: 0px 10px 0px 10px;"></div>
+                        <script>(function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.0";
+                          fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+
+                        <div class="fb-like" data-href="" data-layout="button" data-action="like" data-show-faces="true" data-share="true" style="float: left;"></div>
+
+                  </div>
+                </div>
+                <script>
+
+                    function displayComision() {
+                        document.getElementById("comisiones").style.display = "inline-block";
+                        document.getElementById("perfil").style.display = "none";
+                    }
+                    function displayPerfil() {
+                        document.getElementById("comisiones").style.display = "none";
+                        document.getElementById("perfil").style.display = "inline-block";    
+                    }
+
+
+                </script>
+                <div style="width: 658px; height: 87%; float: left; font-size: 13px; border-left: 2px solid #ebebeb;">
+                    <div style="width: 100%; background-color: #1e5799; border-top: 1px solid #fff;">
+                                    <div class="divCuadro" onclick="displayComisionTable()">
+                                        <center>
+                                            <img alt="Fun" src="./archivos/icon/comision.png" width="30" height="20" style="margin-top: 15px;">
+                                            <p style="margin-top: 0px;">Comision</p>
+                                        </center>
+                                    </div>
+
+                                    <div class="divCuadro" onclick="displayActividades()">
+                                        <center>
+                                            <img alt="Fun" src="./archivos/icon/actividades.png" width="30" height="30" style="margin-top: 5px;">
+                                            <p style="margin-top: 0px;">Actividades</p>
+                                        </center>
+                                    </div>
+
+                                    <div class="divCuadro" onclick="displayViaje()">
+                                        <center>
+                                            <img alt="Fun" src="./archivos/icon/viaje.png" width="20" height="20" style="margin-top: 15px;">
+                                            <p style="margin-top: 0px;">Viaje</p>
+                                        </center>
+                                    </div>
+
+                                    <div class="divCuadro" onclick="displayPatrocinador()">
+                                        <center>
+                                            <img alt="Fun" src="./archivos/icon/institucion.png" width="30" height="30" style="margin-top: 5px;">
+                                            <p style="margin-top: 0px;">Patrocinador</p>
+                                        </center>
+                                    </div>
+
+                                    <div class="divCuadro" onclick="displayGastos()">
+                                        <center>
+                                            <img alt="Fun" src="./archivos/icon/gastos.png" width="30" height="29" style="margin-top: 6px;">
+                                            <p style="margin-top: 0px;">Gastos</p>
+                                        </center>
+                                    </div>
+
+                                    <div class="divCuadro" onclick="displayObservaciones()">
+                                        <center>
+                                            <img alt="Fun" src="./archivos/icon/observaciones.png" width="30" height="30" style="margin-top: 5px;">
+                                            <p style="margin-top: 0px;">Detalles</p>
+                                        </center>
+                                    </div>
+
+                                    <div class="divCuadro" onclick="displayFacturas()">
+                                        <center>
+                                            <img alt="Fun" src="./archivos/icon/facturas.png" width="30" height="30" style="margin-top: 5px;">
+                                            <p style="margin-top: 0px;">Archivos</p>
+                                        </center>
+                                    </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div style="height: 78%; overflow-y: auto;">
+                    
+                                    <center>
+                                        <table id="comision">
+                                            <thead>
+                                                <tr>
+                                                    <td id="titleTable" colspan="2">DETALLES DE COMISIÓN</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td id="titleComisionTable">MECANISCMO:</td>
+                                                    <td class="dataTableComision" id="MecOrigen">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleComisionTable">SOLICITA:</td>
+                                                    <td class="dataTableComision" id="InstGenera">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleComisionTable">UNIDAD RESPONSABLE:</td>
+                                                    <td class="dataTableComision"  id="UR">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleComisionTable">TIPO DE REPRESENTACIÓN:</td>
+                                                    <td class="dataTableComision" id="TipoRep">Cargando...</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table id="viaje">
+                                            <thead>
+                                                <tr>
+                                                    <td id="titleTable" colspan="2">DETALLES DE VIAJE</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td id="titleViajeTable">TIPO DE VIAJE:</td>
+                                                    <td class="dataTableComision" id="TipoViaje">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleViajeTable">NUMERO DE AUTORIZACIÓN:</td>
+                                                    <td class="dataTableComision" id="Acuerdo">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleViajeTable">NUMERO DE OFICIO:</td>
+                                                    <td class="dataTableComision" id="Oficio">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleViajeTable">PAIS DE ORIGEN:</td>
+                                                    <td class="dataTableComision" id="PaisOrigen">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleViajeTable">ESTADO DE ORIGEN:</td>
+                                                    <td class="dataTableComision" id="EstadoOrigen">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleViajeTable">CIUDAD DE ORIGEN:</td>
+                                                    <td class="dataTableComision" id="CiudadOrigen">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleViajeTable">PAIS DESTINO:</td>
+                                                    <td class="dataTableComision" id="PaisDestino">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleViajeTable">ESTADO DESTINO:</td>
+                                                    <td class="dataTableComision" id="EstadoDestino">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titleViajeTable">CIUDAD DESTINO:</td>
+                                                    <td class="dataTableComision" id="CiudadDestino">Cargando...</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table id="patrocinador">
+                                            <thead>
+                                                <tr>
+                                                    <td id="titlePat" colspan="2">INSTITUCIÓN QUE PATROCINA</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td id="titlePatrocinadorTable">INSTITUCIÓN QUE CUBRE EL PASAJE:</td>
+                                                    <td class="dataTableComision" id="CubrePasaje">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titlePatrocinadorTable">TIPO DE PASAJE:</td>
+                                                    <td class="dataTableComision" id="TipoPasaje">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titlePatrocinadorTable">AEROLINEA DE IDA:</td>
+                                                    <td class="dataTableComision" id="LineaOrigen">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titlePatrocinadorTable">NUMERO DE VUELO:</td>
+                                                    <td class="dataTableComision" id="VueloOrigen">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titlePatrocinadorTable">AEROLINEA DE REGRESO:</td>
+                                                    <td class="dataTableComision" id="LineaRegreso">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titlePatrocinadorTable">NUMERO DE VUELO:</td>
+                                                    <td class="dataTableComision" id="VueloRegreso">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titlePatrocinadorTable">FECHA INICIO COMISIÓN:</td>
+                                                    <td class="dataTableComision" id="FechaInicioCom">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titlePatrocinadorTable">FECHA TERMINO DE COMISIÓN:</td>
+                                                    <td class="dataTableComision" id="FechaFinCom">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="titlePatrocinadorTable">GASTOS POR PASAJE EN NM.:</td>
+                                                    <td class="dataTableComision" id="GatosPasaje">Cargando...</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table id="gastos">
+                                            <thead>
+                                                <tr>
+                                                    <td colspan="2" id="titleGastos">DETALLES DE GASTOS</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td id="gastosTitleTable">TARIFA DIARIA PARA VIATICOS:</td>
+                                                        <td class="dataTableComision" id="TarifaDiaria">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="gastosTitleTable">TIPO DE MONEDA:</td>
+                                                    <td class="dataTableComision"  id="Moneda">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="gastosTitleTable">GASTOS DE VIATICOS MN:</td>
+                                                    <td class="dataTableComision"  id="GastosViaticos">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="gastosTitleTable">INSTITUCIÓN QUE CUBRE HOSPEDAJE:</td>
+                                                    <td class="dataTableComision"  id="InstHospedaje">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="gastosTitleTable">NOMBRE DEL HOTEL:</td>
+                                                    <td class="dataTableComision"  id="Hotel">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="gastosTitleTable">FECHA DE ENTRADA:</td>
+                                                    <td class="dataTableComision"  id="FechaEntrada">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="gastosTitleTable">FECHA DE SALIDA:</td>
+                                                    <td class="dataTableComision"  id="FechaSalida">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="gastosTitleTable">COSTO TOTAL DEL HOSPEDAJE:</td>
+                                                    <td class="dataTableComision"  id="CostoHotel">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="gastosTitleTable">MONTO COMPROBADO DE VIATICOS:</td>
+                                                    <td class="dataTableComision"  id="Comprobado">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="gastosTitleTable">MONTO SIN COMPROBACIÓN:</td>
+                                                    <td class="dataTableComision"  id="SinComprobar">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="gastosTitleTable">MONTO DE VIATICOS DEVUELTOS:</td>
+                                                    <td class="dataTableComision"  id="ViaticoDevuelto">Cargando...</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table id="actividades">
+                                            <thead>
+                                                <tr>
+                                                    <td colspan="2" id="actividadesTitle">LISTA DE ACTIVIDADES </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td id="actividadesTitleTable">TEMA:</td>
+                                                    <td class="dataTableComision" id="tema">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="actividadesTitleTable">TIPO DE COMISIÓN:</td>
+                                                    <td class="dataTableComision" id="tipoComision">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="actividadesTitleTable">NOMBRE DEL EVENTO:</td>
+                                                    <td class="dataTableComision" id="nombreEvento">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="actividadesTitleTable">URL DEL EVENTO:</td>
+                                                    <td class="dataTableComision" id="URL">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="actividadesTitleTable">FECHA DE INICIO:</td>
+                                                    <td class="dataTableComision" id="fechaInicio">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="actividadesTitleTable">FECHA DE FIN:</td>
+                                                    <td class="dataTableComision" id="fechaFin">Cargando...</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="actividadesTitleTable">MOTIVO DE COMISIÓN:</td>
+                                                    <td class="dataTableComision" id="motivoComision">Cargando...</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table id="facturas" style=" font-size: 12px; margin: 10px 0px 12px 0px; width: 450px; border: 2px solid #0094ff; display: none;">
+                                            <thead>
+                                                <tr>
+                                                    <td colspan="2" style="font-size: 13px; color: #fff; text-align: center; font-weight: bold; padding: 5px; border-bottom: 1px solid #e4e1e1; background-color: #0094ff; width: 450px; ">LISTA DE ARCHIVOS</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="color: #333; text-align: right; width: 180px; padding: 5px 0px 5px 0px;">COMPROBANTES DE PAGO: </td>
+                                                    <td id="MecOrigen" style="color: #808080; padding: 5px 0px 5px 0px; text-transform: uppercase; text-align: left; CURSOR: POINTER;"> VER ARCHIVO - PDF</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="color: #333; text-align: right; width: 180px; padding: 5px 0px 5px 0px;">ACTIVIDADES: </td>
+                                                    <td id="MecOrigen" style="color: #808080; padding: 5px 0px 5px 0px; text-transform: uppercase; text-align: left; CURSOR: POINTER;"> VER ACTIVIDADES COMPLETAS - PDF</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <table id="observaciones" style=" font-size: 12px; margin: 10px 0px 12px 0px; width: 450px; border: 2px solid #0094ff; display: none;">
+                                            <thead>
+                                                <tr>
+                                                    <td colspan="2" style="font-size: 13px; color: #fff; text-align: center; font-weight: bold; padding: 5px; border-bottom: 1px solid #e4e1e1; background-color: #0094ff; width: 450px; ">OBSERVACIONES</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="color: #333; text-align: right; width: 120px; padding: 5px 0px 5px 0px;">
+                                                        <center>
+                                                            <textarea readonly="true" id="dataObservaciones" style="font-size: 11px; width: 420px; border: none; height: 230px; text-transform: uppercase; overflow-y: auto ; resize: none; font-family: 'Times New Roman'">  </textarea>
+                                                        </center>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </center>
+                                
+                    </div> 
+                
+                </div>
+                <div style="clear: both;"></div>
+                
+            </div>
+        </div>
+        <script>
+
+function displayComisionTable() {
+    clearTable();
+    document.getElementById("comision").style.display = "block";
+}
+
+function displayViaje() {
+    clearTable();
+    document.getElementById("viaje").style.display = "block";
+}
+
+function displayPatrocinador() {
+    clearTable();
+    document.getElementById("patrocinador").style.display = "block";
+}
+
+function displayGastos() {
+    clearTable();
+    document.getElementById("gastos").style.display = "block";
+}
+
+function displayActividades() {
+    clearTable();
+    document.getElementById("actividades").style.display = "block";
+}
+
+function displayObservaciones() {
+    clearTable();
+    document.getElementById("observaciones").style.display = "block";
+}
+
+function displayFacturas() { 
+    clearTable();
+    document.getElementById("facturas").style.display = "block";
+}
+
+
+function clearTable() {
+    document.getElementById("comision").style.display = "none";
+    document.getElementById("viaje").style.display = "none";
+    document.getElementById("patrocinador").style.display = "none";
+    document.getElementById("gastos").style.display = "none";
+    document.getElementById("actividades").style.display = "none";
+    document.getElementById("facturas").style.display = "none";
+    document.getElementById("observaciones").style.display = "none";
+}
+            /*
+            document.getElementById("contentDataMaster").style.height = (screen.height - 370) + "px";
+            */
+        </script>
+    </body>
+</html>

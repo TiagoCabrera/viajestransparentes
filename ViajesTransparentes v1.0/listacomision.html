@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+        <link href="./archivos/style/StyleSheet.css" rel="stylesheet" type="text/css">
+        <script src="./archivos/script/Script.js"></script>
+        <script src="./archivos/script/scriptData.js"></script>
+        <meta charset="utf-8" />        
+        <title></title>
+        <style>
+            #contentFuncionarioDiv{
+                margin: 0px; height: 100%;  width: auto; border-radius: 10px 10px 10px 10px;
+            }
+
+            #listaFuncionarios {
+                width: 100%; height: 350px; float: left; border-radius: 10px 10px 0px 0px; background-color: #1e5799;
+            }
+            #titleComision{
+                float: left; margin: 20px 0px 0px 10px; cursor: pointer;
+            }
+            #imgViajes {
+                margin: 10px; float: left;
+            }
+            
+            #ContentSearch {
+                width: 960px; height: 75%; overflow-y: auto;
+            }
+            #tablita {
+                margin: 12px;
+                color: #000;
+                font-size: 13px;
+                cursor: pointer;
+            }
+            #tablita:hover {
+                background-color: #ebebeb;
+            }
+        </style>
+    </head>
+    <body onload="dataLoadComision()">
+        <div id="page">
+            <!-- Head -->
+            <div id="head">
+                <div id="headTitle">
+                    <div id="salto"></div>
+                    <a>SUSCRIBASE |</a>
+                    <a>SIGANOS EN [</a>
+                    <a>FACEBOOK |</a>
+                    <a>TWITTER |</a>
+                    <a>GOOGLE+]</a>
+                </div>    
+            </div>
+            <!-- Busqueda -->
+            <div id="divSearch">
+                <div id="divSarchContent">
+                    <!--
+                    <div style="float: left; width: auto; height: 40px; font-size: 18px; color: #1e5799; padding: 10px;">
+                        <a style="text-decoration: underline; padding: 5px">Inicio </a>|<a style="text-decoration: underline; padding: 5px;"> Nuestra División</a>
+                    </div>
+                    -->
+                    <div id="divInputSearch">
+                        <div id="salto"></div>
+                        <img onclick="searchData()" id="lupa" alt="Busqueda" src="./archivos/icon/lupa.png" width="35">
+                        <input id="inputBusqueda" placeholder="Buscar un Funcionario Publico u Comisión"> 
+                        <div id="clearBoth"></div>
+                    </div>
+                </div>    
+            </div>
+            <!-- Foot -->
+            <div id="masterFoot">
+                <div id="lineLeft"></div>
+                <div id="masterContentePage" style="">
+
+                    <div id="PageLeft">
+                        <img id="masterLogo" onclick="Enlace('index.html')" alt="Logotipo Principal" src="./archivos/icon/final.png" width="400" height="100">
+                    </div>
+
+                    <div id="pageRight">
+                        <div id="salto"></div>
+                        <center>
+                            <div id="contentLogoMaster" onclick="Enlace('nuestradivision.html')">
+                                <img id="imgDivision" alt="Division" src="./archivos/icon/sede.png" width="50" height="50">
+                                <a>NUESTRA DIVISIÓN</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('servidorespublicos.html')">
+                                <img id="imgFuncionarios" alt="Funcionarios" src="./archivos/icon/funcionarios.png" width="40" height="40">
+                                <a>FUNCIONARIOS PUBLICOS</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('listacomision.html')" style="margin-top: -10px; border-bottom:5px solid #1e5799;">
+                                <img id="imgComisiones" alt="Comisiones" src="./archivos/icon/viajes.png" width="40" height="35">
+                                <a>COMISIONES</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('estadisticas.html')">
+                                <img id="imgEstadisticas" alt="Estadisticas" src="./archivos/icon/estadisticas.png" width="40" height="40">
+                                <a>ESTADISTICAS</a>
+                            </div>
+                        </center>
+                    </div>
+                    <div id="clearBoth"></div>
+                </div> 
+                <div id="lineRight"></div>
+            </div>
+
+            <div id="contentDataMaster">            
+                    <div style="width: 960px; height: 100%; box-shadow: 0px 0px 5px 0px #808080; border-radius: 10px 10px 10px 10px;">
+                        <div style="width: 960px; height: 50px; background-color: #1e5799; border-radius: 10px 10px 0px 0px;">
+                        <center>
+                            <img id="imgViajes" alt="Logo Funcionario" src="./archivos/icon/viaje.png" width="35" height="30">
+                            <a id="titleComision" onclick="Enlace('servidorespublicos.html')" style="color: #fff;">Lista de Comisiones</a>
+                            <div id="clearBoth"></div>
+                        </center>
+                            <div style="width: 100%; height: 40px; background-color: #ebebeb;">
+                                <div style="width: 190px; float: left; margin: 10px;">Nombre Completo</div>
+                                <div style="width: 120px; float: left; margin: 10px;">Fecha de Viaje</div>
+                                <div style="width: 100px;  float: left; margin: 10px;">Tipo de Viaje</div>
+                                <div style="width: 210px; float: left; margin: 10px;">Ciudad [Origen - Destino]  </div>
+                                <div style="width: 150px; float: left; margin: 10px;">Gastos Comprobados</div>
+                                <div style="clear: both;"></div>
+                            </div>
+                        </div>
+                        <div id="ContentSearch">
+                            <div id="load" style="width: 100px; height: auto; margin: 100px auto;">
+                                <center>
+                                    <img alt="loading" src="./archivos/icon/loading.gif" width="50"><br>
+                                    <a style="font-family: Candara; font-size: 10px; color: #808080;">Buscando...</a>
+                                </center>
+                            </div>
+                            <div id="search">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <script>
+            
+            document.getElementById("contentDataMaster").style.height = (screen.height - 370) + "px";
+            
+        </script>
+    </body>
+</html>

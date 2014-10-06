@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+        <link href="./archivos/style/StyleSheet.css" rel="stylesheet" type="text/css">
+        <script src="./archivos/script/Script.js"></script>
+        <script src="./archivos/script/scriptData.js"></script>
+
+        <meta charset="utf-8" />        
+        <title></title>
+        <style>
+
+            #divLeftComision {
+                width: 100%; height: 49px; float: left; border-radius: 10px 10px 0px 0px; background-color: #333;  
+                
+            }
+
+            #idLogoComision {
+                margin: 10px; float: left;
+            }
+
+            #ContentSearchComision {
+                width: 960px; height: 350px; margin-top: 10px; font-family: sans-serif; color: #000; font-size: 12px; background-color: #f00;
+            }
+            
+            #ComisionLeftDetail{
+                float: left; width: 300px; height: 100%; margin: 10px; text-align: left;box-shadow: 0px 0px 5px 0px #333;
+                background-color: #0094ff;
+            }
+            
+            #fotoComisionada{
+                
+            }
+            .dataPerfil {
+                margin: 10px 0px; padding-left: 10px
+            }
+            #titleConsecutivo {
+                margin: 0; text-align: center; background-color: #0094ff; padding:10px; color: #fff; font-size: 14px;
+            }
+
+            #Compartir {
+                margin: 10px; padding-left: 10px;padding-top: 20px; text-align: center;
+            }
+            #ComisionRightDetail {
+                float: left; width: 610px; height: 95%;  margin: 10px; background-color: #808080;
+            }
+            #titleComision{
+                float: left; margin: 20px 0px 0px 10px; cursor: pointer;
+            }
+            #imgViajes {
+                margin: 10px; float: left;
+            }
+        </style>
+
+
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+            $(function () {
+                $('#container').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Servidores Publicos'
+                    },
+                    subtitle: {
+                        text: 'Top 4: Más Comisiones'
+                    },
+                    xAxis: {
+                        categories: [
+                            '2012',
+                            '2013',
+                            '2014',
+                            'Apr',
+                            'May',
+                            'Jun',
+                            'Jul',
+                            'Aug',
+                            'Sep',
+                            'Oct',
+                            'Nov',
+                            'Dec'
+                        ]
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'No Comisiones'
+                        }
+                    },
+                    tooltip: {
+                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                            '<td style="padding:0"><b>{point.y:.1f} Comisiones</b></td></tr>',
+                        footerFormat: '</table>',
+                        shared: true,
+                        useHTML: true
+                    },
+                    plotOptions: {
+                        column: {
+                            pointPadding: 0.2,
+                            borderWidth: 0
+                        }
+                    },
+                    series: [{
+                        name: 'Mario Ernesto',
+                        data: [20, 25, 30]
+
+                    }, {
+                        name: 'Saria Cruz Garcia',
+                        data: [15, 16, 19]
+
+                    }, {
+                        name: 'Alejandro Ivan',
+                        data: [15, 17, 24]
+
+                    }, {
+                        name: 'Antolin Sotelo',
+                        data: [20,21,30]
+
+                    }]
+                });
+            });
+		</script>
+
+    </head>
+    <body>
+<script src="./archivos/js/highcharts.js"></script>
+<script src="./archivos/js/modules/exporting.js"></script>
+        <div id="page">
+            <!-- Head -->
+            <div id="head">
+                <div id="headTitle">
+                    <div id="salto"></div>
+                    <a>SUSCRIBASE |</a>
+                    <a>SIGANOS EN [</a>
+                    <a>FACEBOOK |</a>
+                    <a>TWITTER |</a>
+                    <a>GOOGLE+]</a>
+                </div>    
+            </div>
+            <!-- Busqueda -->
+            <div id="divSearch">
+                <div id="divSarchContent">
+                    <!--
+                    <div style="float: left; width: auto; height: 40px; font-size: 18px; color: #1e5799; padding: 10px;">
+                        <a style="text-decoration: underline; padding: 5px">Inicio </a>|<a style="text-decoration: underline; padding: 5px;"> Nuestra División</a>
+                    </div>
+                    -->
+                    <div id="divInputSearch">
+                        <div id="salto"></div>
+                        <img id="lupa" alt="Busqueda" src="./archivos/icon/lupa.png" width="35">
+                        <input id="inputBusqueda" placeholder="Buscar un Funcionario Publico u Comisión"> 
+                        <div id="clearBoth"></div>
+                    </div>
+                </div>    
+            </div>
+            <!-- Foot -->
+            <div id="masterFoot">
+                <div id="lineLeft"></div>
+                <div id="masterContentePage" style="">
+
+                    <div id="PageLeft">
+                        <img id="masterLogo" onclick="Enlace('index.html')" alt="Logotipo Principal" src="./archivos/icon/final.png" width="400" height="100">
+                    </div>
+
+                    <div id="pageRight">
+                        <div id="salto"></div>
+                        <center>
+                            <div id="contentLogoMaster" onclick="Enlace('nuestradivision.html')">
+                                <img id="imgDivision" alt="Division" src="./archivos/icon/sede.png" width="50" height="50">
+                                <a>NUESTRA DIVISIÓN</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('servidorespublicos.html')">
+                                <img id="imgFuncionarios" alt="Funcionarios" src="./archivos/icon/funcionarios.png" width="40" height="40">
+                                <a>FUNCIONARIOS PUBLICOS</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('listacomision.html')">
+                                <img id="imgComisiones" alt="Comisiones" src="./archivos/icon/viajes.png" width="40" height="35">
+                                <a>COMISIONES</a>
+                            </div>
+                            <div id="contentLogoMaster" onclick="Enlace('estadisticas.html')"   style="margin-top: -10px; border-bottom:5px solid #1e5799;">
+                                <img id="imgEstadisticas" alt="Estadisticas" src="./archivos/icon/estadisticas.png" width="40" height="40">
+                                <a>ESTADISTICAS</a>
+                            </div>
+                        </center>
+                    </div>
+                    <div id="clearBoth"></div>
+                </div> 
+                <div id="lineRight"></div>
+            </div>
+
+            <div id="contentDataMaster" style="box-shadow: 0px 0px 5px 0px #333; border-radius: 10px 10px 10px 10px;">
+                <div style="width: 100%; height: 50px; background-color: #1e5799; border-radius: 10px 10px 0px 0px;">
+                    <center>
+                        <img id="imgViajes" alt="Logo Funcionario" src="./archivos/icon/estadistica.png" width="30" height="30">
+                        <a id="titleComision" onclick="Enlace('servidorespublicos.html')" style="color: #fff;">Estadisticas</a>
+                        <div id="clearBoth"></div>
+                    </center>
+                </div>
+                <div style="width: 300px; height: 87%; float: left;">
+                    <p style="padding: 15px; background-color: #ebebeb; cursor: pointer;">Servidores Con Mas Comisiones</p>
+                    <p style="padding: 15px; background-color: #ebebeb; cursor: pointer;">Comparar Servidores Publicos</p>
+                </div>
+                
+                <div style="width: 658px; height: 87%; float: left; font-size: 13px; border-left: 2px solid #ebebeb;">
+
+                    <div id="container" style="min-width: 310px; max-width: 800px; height: 340px; margin: 0 auto"></div>
+                
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+        <script>
+            /*
+            document.getElementById("contentDataMaster").style.height = (screen.height - 370) + "px";
+            */
+        </script>
+    </body>
+</html>

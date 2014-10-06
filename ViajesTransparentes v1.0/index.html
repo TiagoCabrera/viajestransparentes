@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="./archivos/style/StyleSheet.css" rel="stylesheet" type="text/css">
+        <script src="./archivos/script/Script.js"></script>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <div id="page">
+            <!-- Head -->
+            <div id="head">
+                <div id="headTitle">
+                    <div id="salto"></div>
+                    <a>SUSCRIBASE |</a>
+                    <a>SIGANOS EN [</a>
+                    <a>FACEBOOK |</a>
+                    <a>TWITTER |</a>
+                    <a>GOOGLE+]</a>
+                </div>    
+            </div>
+            <!-- Busqueda -->
+            <div id="divSearch">
+                <div id="divSarchContent">
+                    <div id="divInputSearch">
+                        <div id="salto"></div>
+                        <img id="lupa" alt="Busqueda" src="./archivos/icon/lupa.png" width="35">
+                        <input id="inputBusqueda" placeholder="Buscar un Funcionario Publico u Comisión"> 
+                        <div id="clearBoth"></div>
+                    </div>
+                </div>    
+            </div>
+            <!-- Logo y Noticia -->
+            <div id="divLogo">
+                <div id="divLogoContent">
+                        <div id="divLogoContentLef">
+                            <img alt="Logotipo" src="./archivos/icon/final.png" width="480" height="120" onclick="Enlace('index.html')">
+                        </div>
+                        <!-- Reservado para noticias -->
+                        <div id="divLogoContentRight"></div>
+                        <div id="clearBoth"></div>
+                </div>    
+            </div>
+            <!-- Menu -->
+            <div id="menuIndex">
+                <div id="menuIndexContent">
+                    <div id="menuIndexTitle">
+                        <div id="salto"></div>
+                        <p id="dataContent">
+                            Viajes Transparentes es una división resultado del Instituto Federal de Acceso a la Información Pública y Protección de Datos (IFAI)
+                            como parte de su política de transparencia, en colaboración con Codeando México, SocialTIC y el Instituto Mexicano para la Competitividad A.C. (IMCO),
+                            en el Reto Viajes Transparentes.
+                        </p>
+                    </div>
+                    <div id="menuIndexLogo">
+                        <div id="menuIndexContentLogo">
+                            <center>
+                                <div class="contentLogo" id="contentLogo1" onmouseover="changeDivision(this)" onclick="Enlace('nuestradivision.html')">
+                                    <img id="logoSede" alt="Nuestra Division" src="./archivos/icon/sede.png" width="70" height="70">
+                                </div>
+                                <div class="contentLogo" id="contentLogo2" onmouseover="changeFuncionarios(this)" onclick="Enlace('servidorespublicos.html')">
+                                    <img id="logoFuncionarios" alt="Funcionarios Publicos" src="./archivos/icon/funcionarios.png" width="60" height="60">
+                                </div>
+                                <div class="contentLogo" id="contentLogo3" onmouseover="changeComisiones(this)"  onclick="Enlace('listacomision.html')">
+                                    <img id="logoComisiones" alt="Lista de Comisiones" src="./archivos/icon/viajes.png" width="60" height="50">
+                                </div>
+                                <div class="contentLogo" id="contentLogo4" onmouseover="changeEstadisticas(this)" onclick="Enlace('estadisticas.html')">
+                                    <img id="logoEstadisticas" alt="Estadisticas" src="./archivos/icon/estadisticas.png" width="60" height="60">
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <!-- Pie de Pagina  -->
+            <div id="foot">
+                <div id="footContent">
+                    <div id="salto"></div>
+                    <a>Copyright © 2014 IFAI. Reservados todos los derechos.</a>
+                    <a>|</a>
+                    <a>Términos de Uso</a>
+                    <a>|</a>
+                    <a>Política de Privacidad</a>
+                    <a>|</a>
+                    <a>Contactos</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
